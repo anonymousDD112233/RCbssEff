@@ -226,17 +226,3 @@ class kBestSequencing:
             return False
 
         return True
-
-
-# d = {"Rows": 12, "Cols": 12, "Map": [0 for _ in range(12 * 12)]}
-# p = kBestSequencing([(5, 1), (31, 2), (51, 0)], [29, 53], d, 1)
-# for i in range(1, 14):
-#     print(p.find_k_best_solution(i))
-
-# p = kBestSequencing([(50, 0), (89, 3)], [17, 56], d)
-# for i in range(1, 8):
-#     print(p.find_k_best_solution(i))
-
-# p = kBestSequencing([(74,0)], [41, 80, 5], d)
-# for i in range(1, 8):
-#     print(p.find_k_best_solution(i))
