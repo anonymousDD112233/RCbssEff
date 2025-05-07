@@ -15,7 +15,7 @@ This repository implements the core algorithms and methods described in the pape
 * createMap.py - Utility script to create and initialize test maps/environments used in simulations, including agent and goal placements.
 * kBestSequencing.py - Implements the core logic of the K-Best Sequencing procedure, generating multiple optimal goal sequence allocations by solving the problem as a standard TSP after applying a transformation.
 * kBestSequencingWithGLKH.py - A variant of kBestSequencing.py that directly integrates the Generalized Lin-Kernighan-Helsgaun (GLKH) solver to solve the problem as an E-GTSP, allowing native handling of clusters and improving accuracy for complex goal structures.
-* Technical Appendix.pdf — Contains the technical appendix with the formal proofs presented in the paper.
+* ECAI-2025_supplement_9093.pdf — Contains the technical appendix with the formal proofs presented in the paper.
 
 ## Directories Overview
 
