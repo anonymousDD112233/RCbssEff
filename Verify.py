@@ -123,11 +123,10 @@ class Verify:
         # Initial simulation run
         count_success = self.run_s_simulations(s0, paths)
         # Additional simulations performed iteratively
-        more_simulation = 0
 
         while True:
             # Calculate the estimated probability of no collision (P0)
-            P0 = count_success / (s0 + more_simulation)
+            P0 = count_success / s0
             # Upper confidence bound (c1)
             c1 = self.no_collision_prob + norm.ppf(1 - self.verifyAlpha) * math.sqrt(
                 (self.no_collision_prob * (1 - self.no_collision_prob)) / s0)
@@ -143,5 +142,5 @@ class Verify:
                 return False
 
             # If no decision, add one more simulation
-            more_simulation += 1
-            count_success += self.run_s_simulations(more_simulation, paths)
+            s0 += 1
+            count_success += self.run_s_simulations(1, paths)
