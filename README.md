@@ -20,7 +20,7 @@ This repository includes full source code, benchmark data, experiment scripts, a
 
 - **Agent_Goal_locations_files/** – Agent and goal configuration files for experiments.  
 - **ExperimentalResults/** – Processed experimental results from all experiments.  
-- **Maps/** – Benchmark maps used in experiments.
+- **Maps/** – Benchmark maps used in experiments.  
 - **Run_Robust_Cbss_Framework.py** – Runs the main Robust CBSS framework (RCbssEff and RCbssBase).  
 - **Simulation_for_AblationStudy.py** – Runs simulations for ablation studies.  
 - **TestRCbssEffAblationStudy.py** – Executes ablation experiments.  
@@ -33,7 +33,7 @@ This repository includes full source code, benchmark data, experiment scripts, a
 - **Verify.py** – Verifies solution robustness using simulations.  
 - **kBestSequencing.py** – K‑best‑Sequencing algorithm using TSP.  
 - **kBestSequencingWithGLKH.py** – K‑best‑Sequencing algorithm using E‑GTSP.  
-- **AAAI‑2026_technicalAppendix.pdf** – Technical appendix with proofs and supp
+- **AAAI‑2026_technicalAppendix.pdf** – Technical appendix with proofs and supplementary results.  
 
 ---
 
@@ -41,7 +41,9 @@ This repository includes full source code, benchmark data, experiment scripts, a
 
 ### Python
 - **Python** ≥ 3.10  
-- Recommended: **Ubuntu 20.04+** (tested on Ubuntu 24.04, AMD EPYC 7702P, 16 cores)
+- Recommended: **Ubuntu 20.04+** (tested on Ubuntu 24.04, AMD EPYC 7702P, 16 cores)  
+- **numpy==2.2.6**  
+- **scipy==1.15.3**  
 
 ### External Solvers
 This project relies on two external solvers:
