@@ -73,5 +73,5 @@ All randomized components are initialized with fixed seeds for reproducibility:
 - **Conflict resolution** when multiple conflicts exist (FindConflict.py): `seed = 42`
 - **Ablation experiments** (TestRCbssEffAblationStudy.py): `seed = 44`
 
-Other components (RCbssEff, RCbssBase, low‑level planning) are fully deterministic given identical inputs.
+Other components are fully deterministic given identical inputs.
 
