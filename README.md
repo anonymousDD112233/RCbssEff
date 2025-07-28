@@ -63,3 +63,15 @@ make
 tar -xvzf GLKH-1.1.tar.gz
 cd GLKH-1.1
 make
+```
+
+---
+
+## Randomization & Seeds
+All randomized components are initialized with fixed seeds for reproducibility:
+- **Monte Carlo verification** (Verify.py): `seed = 47`
+- **Conflict resolution** when multiple conflicts exist (FindConflict.py): `seed = 42`
+- **Ablation experiments** (TestRCbssEffAblationStudy.py): `seed = 44`
+
+Other components (RCbssEff, RCbssBase, low‑level planning) are fully deterministic given identical inputs.
+
