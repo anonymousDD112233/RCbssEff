@@ -18,20 +18,46 @@ This repository includes full source code, benchmark data, experiment scripts, a
 
 ## Repository Structure
 
-- **Agent_Goal_locations_files/** – Agent and goal configuration files used in experiments.  
-- **ExperimentalResults/** – Processed experimental data including success rates, runtimes, and ablation results.  
-- **Maps/** – Benchmark grid maps (from [Stern et al., 2019](https://movingai.com/benchmarks/)) used in experiments.  
-- **AAAI-2026_technicalAppendix.pdf** – Technical appendix with proofs, pseudocode, and additional experimental details.  
-- **FindConflict.py** – Conflict detection module (vertex, edge, and delay conflicts) with p‑robust conflict handling.  
-- **LowLevelPlan.py** – Low‑level single‑agent planner supporting orientation‑aware movement and kinematic constraints.  
-- **NodeStateConstClasses.py** – Data structures for representing agent states, configurations, and constraints in the search.  
-- **README.md** – This documentation file.  
-- **Run_Robust_Cbss_Framework.py** – Main entry point to execute RCbssEff and RCbssBase on selected problem instances.  
-- **Simulation_for_AblationStudy.py** – Script for running ablation studies (e.g., disabling delay modeling or rotation costs).  
-- **TestRCbssEffAblationStudy.py** – Script for testing RCbssEff with ablation settings across various scenarios.  
-- **TestRCbssEffScalability.py** – Script for scalability experiments over varying numbers of agents and goals.  
-- **TestRCbssEffVsRCbssBase.py** – Script comparing RCbssEff against RCbssBase across benchmark tasks.  
-- **Verify.py** – Probabilistic verification of p‑robustness using deterministic and Monte Carlo checks.  
-- **createMap.py** – Utility for generating or preprocessing maps for experiments.  
-- **kBestSequencing.py** – Implementation of the K‑best‑Sequencing algorithm for TSP‑based allocation (RCbssBase).  
-- **kBestSequencingWithGLKH.py** – Extended K‑best‑Sequencing for E‑GTSP allocation (RCbssEff).  
+- **Agent_Goal_locations_files/** – Agent and goal configuration files for experiments.  
+- **ExperimentalResults/** – Processed experimental results from all experiments.  
+- **Maps/** – Benchmark maps used in experiments.
+- **Run_Robust_Cbss_Framework.py** – Runs the main Robust CBSS framework (RCbssEff and RCbssBase).  
+- **Simulation_for_AblationStudy.py** – Runs simulations for ablation studies.  
+- **TestRCbssEffAblationStudy.py** – Executes ablation experiments.  
+- **TestRCbssEffScalability.py** – Executes scalability experiments.  
+- **TestRCbssEffVsRCbssBase.py** – Compares RCbssEff and RCbssBase performance.  
+- **createMap.py** – Generates agent and goal configurations for maps.  
+- **FindConflict.py** – Detects conflicts between agents’ paths.  
+- **LowLevelPlan.py** – Computes individual agent paths under constraints.  
+- **NodeStateConstClasses.py** – Defines data structures for nodes, states, and constraints.  
+- **Verify.py** – Verifies solution robustness using simulations.  
+- **kBestSequencing.py** – K‑best‑Sequencing algorithm using TSP.  
+- **kBestSequencingWithGLKH.py** – K‑best‑Sequencing algorithm using E‑GTSP.  
+- **AAAI‑2026_technicalAppendix.pdf** – Technical appendix with proofs and supp
+
+---
+
+## Requirements & Installation
+
+### Python
+- **Python** ≥ 3.10  
+- Recommended: **Ubuntu 20.04+** (tested on Ubuntu 24.04, AMD EPYC 7702P, 16 cores)
+
+### External Solvers
+This project relies on two external solvers:
+- **LKH‑3.0.11** – for solving multi‑agent TSP (used in RCbssBase).  
+- **GLKH‑1.1** – for solving multi‑agent E‑GTSP with orientation handling (used in RCbssEff).  
+
+Download and compile them from their official sources:  
+- LKH: [http://www.akira.ruc.dk/~keld/research/LKH/](http://www.akira.ruc.dk/~keld/research/LKH/)  
+- GLKH: [http://www.akira.ruc.dk/~keld/research/GLKH/](http://www.akira.ruc.dk/~keld/research/GLKH/)  
+
+Compile each solver:
+```bash
+tar -xvzf LKH-3.0.11.tar.gz
+cd LKH-3.0.11
+make
+
+tar -xvzf GLKH-1.1.tar.gz
+cd GLKH-1.1
+make
