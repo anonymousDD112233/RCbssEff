@@ -56,7 +56,7 @@ class Verify:
         self.randGen = random.Random(47)
 
     def verify(self, paths):
-        if self.algorithm in ["pRobustCbss", "baseline1", "baseline3"]:
+        if self.algorithm in ["RCbssEff", "RCbssBase", "IRC"]:
             return self.verify_monte_carlo(paths)
         else:
             return verify_without_delays(paths)

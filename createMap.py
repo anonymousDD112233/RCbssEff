@@ -15,7 +15,7 @@ def create_positions_for_agents_And_Locs_For_Goals(NumAgents, NumGoals, MapAndDi
 
 
 def read_map_file(file_path):
-    with open("OurResearch.domain/" + file_path, 'r') as f:
+    with open("Maps/" + file_path, 'r') as f:
         lines = f.readlines()
 
     map_start_index = lines.index("map\n") + 1

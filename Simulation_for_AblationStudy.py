@@ -11,12 +11,12 @@ class Simulation_for_type2_test:
         self.SOC = 0
 
     def runSimulation(self):
-        if self.algorithm in ["RobustCbss", "IDP"]:
-            return self.run_simulation_for_RobustCbssOrIDP()
+        if self.algorithm in ["RCbssEff", "IDP"]:
+            return self.run_simulation_for_RCbssEffOrIDP()
         else:
             return self.run_simulation_for_IRC()
 
-    def run_simulation_for_RobustCbssOrIDP(self):
+    def run_simulation_for_RCbssEffOrIDP(self):
         # Initialize the set of active agents (agents that have not finished their path)
         active_agents = {agent for agent, path in self.plan.items() if len(path) > 1}
         # Flag to indicate if a collision occurs
